@@ -27,7 +27,7 @@ public class SenderServiceImpl implements SenderService {
         rabbitMessages.setPassword("PWD"+System.currentTimeMillis());// 来源通道
         rabbitMessages.setPhone("19909097654");
         rabbitTemplate.convertAndSend(RabbitConstant.EXCHANGE_NAME,
-                RabbitConstant.ROUTING_KEY,
+                RabbitConstant.ROUTING_KEY_USER,
                 JacksonUtil.objWriteStr(rabbitMessages, JsonSerialize.Inclusion.NON_EMPTY));
     }
 
@@ -38,7 +38,7 @@ public class SenderServiceImpl implements SenderService {
         rabbitMessages.setPassword("PWD"+System.currentTimeMillis());// 来源通道
         rabbitMessages.setPhone("19909097654");
         rabbitTemplate.convertAndSend(RabbitConstant.EXCHANGE_NAME,
-                RabbitConstant.ROUTING_KEY,
+                RabbitConstant.ROUTING_KEY_ROLE,
                 JacksonUtil.objWriteStr(rabbitMessages, JsonSerialize.Inclusion.NON_EMPTY));
     }
 }

@@ -7,7 +7,7 @@ package com.tian.utils;
 public class RabbitConstant {
     public final static String QUEUE_NAME = "spring-boot-queue";
     public final static String EXCHANGE_NAME = "spring-boot-exchange";
-    public final static String EXCHANGE_NAME1 = "spring-boot-exchange1";
-    public final static String ROUTING_KEY = "spring-boot-key";
+    public final static String ROUTING_KEY_USER = "spring-boot-key";
+    public final static String ROUTING_KEY_ROLE = "spring-boot-key";
 
 }

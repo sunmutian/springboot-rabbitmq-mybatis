@@ -2,7 +2,7 @@ package com.tian.receiver;
 
 import com.rabbitmq.client.Channel;
 import com.tian.config.RabbitConfig;
-import com.tian.config.RabbitExchangeConfig;
+import com.tian.config.UserQueue;
 import com.tian.model.User;
 import com.tian.service.user.UserService;
 import com.tian.utils.JacksonUtil;
@@ -23,21 +23,21 @@ import javax.annotation.Resource;
  * @date 2018-05-08 11:52
  **/
 @Configuration
-public class RabbitReceive
+public class UserReceive
 {
-    private Logger logger = LoggerFactory.getLogger(RabbitReceive.class);
+    private Logger logger = LoggerFactory.getLogger(UserReceive.class);
     @Resource
     private RabbitConfig rabbitConfig;
     @Resource
     private UserService userService;
 
     @Autowired
-    private RabbitExchangeConfig rabbitExchangeConfig;
+    private UserQueue userQueue;
 
     @Bean
     public SimpleMessageListenerContainer messageContainer() {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(rabbitConfig.connectionFactory());
-        container.setQueues(rabbitExchangeConfig.queueTest()); //设置要监听的队列
+        container.setQueues(userQueue.queue()); //设置要监听的队列
         container.setExposeListenerChannel(true);
         container.setMaxConcurrentConsumers(1);
         container.setConcurrentConsumers(1);
