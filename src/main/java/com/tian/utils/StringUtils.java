@@ -3,10 +3,16 @@ package com.tian.utils;
 import java.util.UUID;
 
 /**
- * Created By Donghua.Chen on  2018/1/9
- */
+ * rabbitmq常量类
+ *
+ * @author tianweichang
+ * @date 2018-05-08 11:53
+ **/
 public class StringUtils {
 
+    /**
+     * 获取uuid
+     */
     public static String UUID(){
         return UUID.randomUUID().toString().replace("-", "");
     }

@@ -1,6 +1,8 @@
 package com.tian.utils;
 
 /**
+ * rabbitmq常量类
+ *
  * @author tianweichang
  * @date 2018-05-08 11:53
  **/
