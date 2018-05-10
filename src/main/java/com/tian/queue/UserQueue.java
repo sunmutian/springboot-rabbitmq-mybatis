@@ -1,4 +1,4 @@
-package com.tian.config;
+package com.tian.queue;
 
 import com.tian.utils.RabbitConstant;
 import org.springframework.amqp.core.*;

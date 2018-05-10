@@ -2,7 +2,7 @@ package com.tian.receiver;
 
 import com.rabbitmq.client.Channel;
 import com.tian.config.RabbitConfig;
-import com.tian.config.UserQueue;
+import com.tian.queue.UserQueue;
 import com.tian.model.User;
 import com.tian.service.user.UserService;
 import com.tian.utils.JacksonUtil;
